@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Library Management System</h1>
+    
+    <div id="auth-section">
+        <h2>Login</h2>
+        <input type="text" id="login-name" placeholder="Username" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <button onclick="login()">Login</button>
+        
+        <h2>Register</h2>
+        <input type="text" id="register-name" placeholder="Username" required>
+        <input type="password" id="register-password" placeholder="Password" required>
+        <select id="membership-type">
+            <option value="6 months">6 Months</option>
+            <option value="1 year">1 Year</option>
+            <option value="2 years">2 Years</option>
+        </select>
+        <button onclick="register()">Register</button>
+    </div>
+
+    <div id="book-section" style="display:none;">
+        <h2>Books</h2>
+        <div id="book-list"></div>
+        <button onclick="showAddBookForm()">Add Book</button>
+        <div id="add-book-form" style="display:none;">
+            <h2>Add Book</h2>
+            <input type="text" id="book-title" placeholder="Book Title" required>
+            <input type="text" id="book-author" placeholder="Author" required>
+            <select id="book-type">
+                <option value="book">Book</option>
+                <option value="movie">Movie</option>
+            </select>
+            <button onclick="addBook()">Submit</button>
+        </div>
+
+        <h2>Issue Book</h2>
+        <input type="text" id="issue-book-id" placeholder="Book ID" required>
+        <button onclick="issueBook(document.getElementById('issue-book-id').value)">Issue Book</button>
+
+        <h2>Return Book</h2>
+        <input type="text" id="return-transaction-id" placeholder="Transaction ID" required>
+        <button onclick="returnBook(document.getElementById('return-transaction-id').value)">Return Book</button>
+
+        <h2>Pay Fine</h2>
+        <input type="text" id="pay-fine-transaction-id" placeholder="Transaction ID" required>
+        <input type="number" id="fine-amount" placeholder="Fine Amount" required>
+        <button onclick="payFine(document.getElementById('pay-fine-transaction-id').value, document.getElementById('fine-amount').value)">Pay Fine</button>
+
+        <h2>Update Membership</h2>
+        <select id="membership-update-type">
+            <option value="6 months">6 Months</option>
+            <option value="1 year">1 Year</option>
+            <option value="2 years">2 Years</option>
+        </select>
+        <button onclick="updateMembership(document.getElementById('membership-update-type').value)">Update Membership</button>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
